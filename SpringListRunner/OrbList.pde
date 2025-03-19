@@ -43,7 +43,10 @@ class OrbList {
     Insert o to the beginning of the list.
     =========================*/
   void addFront(OrbNode o) {
-
+    if (o != null) {
+      o.next = front;
+      front = o;
+    }
   }//addFront
 
 
@@ -58,7 +61,7 @@ class OrbList {
     SPRING_LEGNTH apart horizontally.
     =========================*/
   void populate(int n, boolean ordered) {
-
+    front = null;
   }//populate
 
   /*===========================
@@ -68,7 +71,11 @@ class OrbList {
     the display method defined in the OrbNode class.
     =========================*/
   void display() {
-
+    OrbNode current = front;
+    while (current != null) {
+      current.display();
+      current = current.next;
+    }
   }//display
 
   /*===========================
